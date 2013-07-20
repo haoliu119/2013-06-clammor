@@ -11,3 +11,31 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+ActiveRecord::Schema.define(:version => 1) do
+
+  create_table "comments", :force => true do |t|
+    t.integer "user_id"
+  end
+
+  create_table "groups", :force => true do |t|
+  end
+
+  create_table "posts", :force => true do |t|
+    t.integer "user_id"
+  end
+
+  create_table "statuses", :force => true do |t|
+    t.string  "content"
+    t.integer "user_id"
+  end
+
+  create_table "subscriptions", :force => true do |t|
+    t.integer "user_id"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string "name"
+    t.string "email"
+  end
+
+end

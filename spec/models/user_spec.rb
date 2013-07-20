@@ -21,12 +21,16 @@ describe User do
   it "should create a default Status when a user is created" do
     user = User.create({ :name => "Jon Doe", :email => "test@alright.com" })
     user.status.should_not be_nil
-    user.status.content.should == "I Just joined Clammor!"
+    user.status.content.should == "I just joined Clammor!"
   end
 
   it "should delete the user's status if a user is deleted" do
     # Implement a test that checks whether a User's status is deleted 
     # when a User is destroyed see post_spec.rb for inspiration. 
-    pending
+    user = User.create({ :name => "Jon Doe", :email => "test@alright.com" })
+
+    expect {
+      user.destroy
+    }.to change{Status.count}.by(-1)
   end 
 end
