@@ -1,5 +1,7 @@
 class Subscription < ActiveRecord::Base
   # TODO Implement Subscription associations. See subscription_spec.rb for specification.
+  belongs_to :user
+  belongs_to :group
 
   # TODO Implement a Subscription custom validation. See subscription_spec.rb for specification.
   
