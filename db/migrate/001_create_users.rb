@@ -14,20 +14,24 @@ class CreateUsers < ActiveRecord::Migration
     end
 
     create_table :posts do |t|
-      t.belongs_to :user
+      t.string :title
+      t.text :content
+      t.references :user
     end
 
     create_table :comments do |t|
-      t.belongs_to :user
+      t.text :content
+      t.references :post
+      t.references :user
     end
 
     create_table :statuses do |t|
       t.string :content
-      t.belongs_to :user
+      t.references :user
     end
 
     create_table :subscriptions do |t|
-      t.belongs_to :user
+      t.references :user
     end
 
     create_table :groups do |t|
