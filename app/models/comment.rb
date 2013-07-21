@@ -5,6 +5,7 @@ class Comment < ActiveRecord::Base
 
   attr_accessible :content
 
-  # TODO Implement Comment validations. See comment_spec.rb for specification.
+  # TODO Implement Comment validations. See comment_spec.rb for specification
+  validates :content, presence: true
 
 end
