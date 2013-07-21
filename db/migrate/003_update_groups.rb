@@ -6,11 +6,11 @@
 # and once a migration is run, a new one must
 # be created with a later timestamp.
 
-class AddGroupRefToSubscriptions < ActiveRecord::Migration
+class UpdateGroups < ActiveRecord::Migration
   def change
-    change_table :subscriptions do |t|
-      t.string :renew_date
-      t.references :group
+    change_table :groups do |t|
+      t.string :name
+      t.string :motto
     end
   end
 end
